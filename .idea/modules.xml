@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/HeyCore/HeyCore.iml" filepath="$PROJECT_DIR$/HeyCore/HeyCore.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HeyGym.iml" filepath="$PROJECT_DIR$/HeyGym.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HeyWeb/HeyWeb.iml" filepath="$PROJECT_DIR$/HeyWeb/HeyWeb.iml" />
+    </modules>
+  </component>
+</project>
