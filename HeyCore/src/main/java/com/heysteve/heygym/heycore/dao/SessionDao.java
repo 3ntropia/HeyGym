@@ -1,15 +1,22 @@
 package com.heysteve.heygym.heycore.dao;
 
 import com.heysteve.heygym.heycore.model.Session;
+import com.heysteve.heygym.heycore.model.User;
+import org.springframework.data.repository.CrudRepository;
+
+import javax.transaction.Transactional;
 
 /**
- * Created by martinh on 26/3/2017.
+ * Created by marti on 1/5/2017.
  */
-public class SessionDao extends DaoImpl {
+@Transactional
+public interface SessionDao extends CrudRepository<Session, Long> {
 
-    SessionDao sessionDao;
+    /**
+     * This method will find an User instance in the database by its email.
+     * Note that this method is not implemented and its working code will be
+     * automagically generated from its signature by Spring Data JPA.
+     */
+    public User findByEmail(String email);
 
-    public void saveSession(Session session){
-        sessionDao.save(session);
-    }
 }

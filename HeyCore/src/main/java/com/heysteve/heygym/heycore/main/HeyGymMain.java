@@ -2,15 +2,18 @@ package com.heysteve.heygym.heycore.main;
 
 import com.heysteve.heygym.heycore.business.SessionBO;
 import com.heysteve.heygym.heycore.model.Session;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
-/**
- * Created by martinh on 26/3/2017.
- */
-//Primer commit Daro
+@Controller
+@EnableAutoConfiguration
 public class HeyGymMain {
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         ApplicationContext appContext = new ClassPathXmlApplicationContext("/config/BeanLocations.xml");
 
         SessionBO sessionBO = (SessionBO)appContext.getBean("sessionBO");
@@ -21,6 +24,15 @@ public class HeyGymMain {
         sessionBO.save(session);
 
 
+    }*/
+
+    @RequestMapping("/")
+    @ResponseBody
+    String home() {
+        return "Hello World!";
     }
 
+    public static void main(String[] args) {
+        SpringApplication.run(HeyGymMain.class, args);
+    }
 }
