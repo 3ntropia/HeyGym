@@ -1,6 +1,5 @@
 package com.heysteve.heygym.heycore.main;
 
-import com.heysteve.heygym.heycore.business.SessionBO;
 import com.heysteve.heygym.heycore.model.Session;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;

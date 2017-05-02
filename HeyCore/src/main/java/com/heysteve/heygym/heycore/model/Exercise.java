@@ -1,9 +1,17 @@
 package com.heysteve.heygym.heycore.model;
 
+import javax.persistence.*;
+
 /**
  * Created by martinh on 25/3/2017.
  */
+@Entity
+@Table(name = "excercises")
 public class Exercise {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer idExercise;
     private String name;
     private String description;
     private String repetition;
@@ -14,6 +22,14 @@ public class Exercise {
     private Integer set;
 
     public Exercise() {
+    }
+
+    public Integer getIdExercise() {
+        return idExercise;
+    }
+
+    public void setIdExercise(Integer idExercise) {
+        this.idExercise = idExercise;
     }
 
     public Integer getWeight() {

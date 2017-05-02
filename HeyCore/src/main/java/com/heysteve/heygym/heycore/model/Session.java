@@ -9,13 +9,12 @@ public class Session implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer sessionId;
+    private Integer idSession;
 
     private String email;
 
     private String password;
 
-    private String descriptionPrueba;
     /*private Customer customer;
 
     public Customer getCustomer() {
@@ -27,7 +26,7 @@ public class Session implements Serializable{
     }*/
 
     public Session(Integer sessionId) {
-        this.sessionId = sessionId;
+        this.idSession = sessionId;
     }
 
     public Session(String email, String password) {
@@ -51,20 +50,11 @@ public class Session implements Serializable{
         this.password = password;
     }
 
-    public Integer getSessionId() {
-        return sessionId;
+    public Integer getIdSession() {
+        return idSession;
     }
 
-    public void setSessionId(Integer sessionId) {
-        this.sessionId = sessionId;
-    }
-
-
-    public String getDescriptionPrueba() {
-        return descriptionPrueba;
-    }
-
-    public void setDescriptionPrueba(String descriptionPrueba) {
-        this.descriptionPrueba = descriptionPrueba;
+    public void setIdSession(Integer idSession) {
+        this.idSession = idSession;
     }
 }

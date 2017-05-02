@@ -1,13 +1,28 @@
 package com.heysteve.heygym.heycore.model;
 
+import javax.persistence.*;
 import java.util.List;
 
 /**
  * Created by martinh on 25/3/2017.
  */
+@Entity
+@Table(name = "workouts")
 public class Workout {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer idWorkout;
     private String name;
     private List<Exercise> exercise;
+
+    public Integer getIdWorkout() {
+        return idWorkout;
+    }
+
+    public void setIdWorkout(Integer idWorkout) {
+        this.idWorkout = idWorkout;
+    }
 
     public String getName() {
         return name;
