@@ -22,8 +22,8 @@ public class test {
         String userId = "";
         try {
             Session user = new Session(email, name);
-            userDao.save(user);
-            userId = String.valueOf(user.getSessionId());
+            userDao.create(user);
+            userId = String.valueOf(user.getIdSession());
         }
         catch (Exception ex) {
             return "Error creating the user: " + ex.toString();
@@ -65,7 +65,7 @@ public class test {
     /**
      * GET /update  --> Update the email and the name for the user in the
      * database having the passed id.
-     */
+     *//*
     @RequestMapping("/update")
     @ResponseBody
     public String updateUser(long id, String email, String name) {
@@ -79,5 +79,5 @@ public class test {
             return "Error updating the user: " + ex.toString();
         }
         return "User succesfully updated!";
-    }
+    }*/
 }

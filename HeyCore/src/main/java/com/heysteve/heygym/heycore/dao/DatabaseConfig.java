@@ -18,6 +18,17 @@ import java.util.Properties;
 @EnableTransactionManagement
 public class DatabaseConfig {
 
+    // Private fields
+
+    @Autowired
+    private Environment env;
+
+    @Autowired
+    private DataSource dataSource;
+
+    @Autowired
+    private LocalContainerEntityManagerFactoryBean entityManagerFactory;
+
     @Bean
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
@@ -39,8 +50,7 @@ public class DatabaseConfig {
         entityManagerFactory.setDataSource(dataSource);
 
         // Classpath scanning of @Component, @Service, etc annotated class
-        entityManagerFactory.setPackagesToScan(
-                env.getProperty("entitymanager.packagesToScan"));
+        entityManagerFactory.setPackagesToScan(env.getProperty("entitymanager.packagesToScan"));
 
         // Vendor adapter
         HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
@@ -86,14 +96,5 @@ public class DatabaseConfig {
         return new PersistenceExceptionTranslationPostProcessor();
     }
 
-    // Private fields
 
-    @Autowired
-    private Environment env;
-
-    @Autowired
-    private DataSource dataSource;
-
-    @Autowired
-    private LocalContainerEntityManagerFactoryBean entityManagerFactory;
 }
