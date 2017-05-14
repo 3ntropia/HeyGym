@@ -12,8 +12,11 @@ public class Workout {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="idworkout")
     private Integer idWorkout;
     private String name;
+    @OneToMany(cascade=CascadeType.ALL)
+    @JoinColumn(name="idexercise")
     private List<Exercise> exercise;
 
     public Integer getIdWorkout() {

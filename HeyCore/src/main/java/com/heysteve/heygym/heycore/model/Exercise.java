@@ -11,6 +11,7 @@ public class Exercise {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="idexercise")
     private Integer idExercise;
     private String name;
     private String description;

@@ -1,10 +1,22 @@
 package com.heysteve.heygym.heycore.model;
 
+import javax.persistence.*;
 
+@Entity
+@DiscriminatorValue("usuario")
 public class Customer extends User{
 
     private String name;
+    private String lastName;
     private Integer doc;
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
 
     public String getName() {
         return name;

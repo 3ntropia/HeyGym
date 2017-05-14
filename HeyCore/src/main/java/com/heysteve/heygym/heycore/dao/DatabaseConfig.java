@@ -1,4 +1,14 @@
+/*
 package com.heysteve.heygym.heycore.dao;
+
+*/
+/**
+ * Created by marti on 14/5/2017.
+ *//*
+
+import java.util.Properties;
+
+import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -11,14 +21,14 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import javax.sql.DataSource;
-import java.util.Properties;
+*/
+/**
+ * Contains database configurations.
+ *//*
 
 @Configuration
 @EnableTransactionManagement
 public class DatabaseConfig {
-
-    // Private fields
 
     @Autowired
     private Environment env;
@@ -28,6 +38,12 @@ public class DatabaseConfig {
 
     @Autowired
     private LocalContainerEntityManagerFactoryBean entityManagerFactory;
+
+    */
+/**
+     * DataSource definition for database connection. Settings are read from
+     * the application.properties file (using the env object).
+     *//*
 
     @Bean
     public DataSource dataSource() {
@@ -39,9 +55,11 @@ public class DatabaseConfig {
         return dataSource;
     }
 
-    /**
+    */
+/**
      * Declare the JPA entity manager factory.
-     */
+     *//*
+
     @Bean
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
         LocalContainerEntityManagerFactoryBean entityManagerFactory =
@@ -50,7 +68,8 @@ public class DatabaseConfig {
         entityManagerFactory.setDataSource(dataSource);
 
         // Classpath scanning of @Component, @Service, etc annotated class
-        entityManagerFactory.setPackagesToScan(env.getProperty("entitymanager.packagesToScan"));
+        entityManagerFactory.setPackagesToScan(
+                env.getProperty("entitymanager.packagesToScan"));
 
         // Vendor adapter
         HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
@@ -72,9 +91,11 @@ public class DatabaseConfig {
         return entityManagerFactory;
     }
 
-    /**
+    */
+/**
      * Declare the transaction manager.
-     */
+     *//*
+
     @Bean
     public JpaTransactionManager transactionManager() {
         JpaTransactionManager transactionManager =
@@ -84,17 +105,19 @@ public class DatabaseConfig {
         return transactionManager;
     }
 
-    /**
+    */
+/**
      * PersistenceExceptionTranslationPostProcessor is a bean post processor
      * which adds an advisor to any bean annotated with Repository so that any
      * platform-specific exceptions are caught and then rethrown as one
      * Spring's unchecked data access exceptions (i.e. a subclass of
      * DataAccessException).
-     */
+     *//*
+
     @Bean
     public PersistenceExceptionTranslationPostProcessor exceptionTranslation() {
         return new PersistenceExceptionTranslationPostProcessor();
     }
 
-
 }
+*/
