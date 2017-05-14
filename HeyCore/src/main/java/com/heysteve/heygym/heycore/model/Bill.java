@@ -17,13 +17,18 @@ public class Bill {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="idbill")
     private Integer idBill;
+
     private Integer number;
+
     @OneToMany
     @JoinColumn(name="itemId")
     private List<ItemBill> items;
+
     @OneToOne
     @JoinColumn(name="userId")
     private Customer customer;
+
+    @Column(name="datetime")
     private Calendar dateTime;
 
     public Integer getIdBill() {

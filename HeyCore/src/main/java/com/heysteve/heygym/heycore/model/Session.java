@@ -5,7 +5,7 @@ import java.io.Serializable;
 
 @Entity
 @Table(name = "sessions")
-public class Session implements Serializable{
+public class Session{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -32,6 +32,9 @@ public class Session implements Serializable{
     public Session(String email, String password) {
         this.email = email;
         this.password = password;
+    }
+
+    public Session() {
     }
 
     public String getEmail() {
