@@ -15,7 +15,6 @@ public class Bill {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name="idbill")
     private Integer idBill;
 
     private Integer number;

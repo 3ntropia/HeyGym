@@ -84,6 +84,7 @@ public class UserController {
             userId = String.valueOf(user.getUserId());
         }
         catch (Exception ex) {
+
             return "User not found: " + ex.toString();
         }
         return "The user id is: " + userId;
@@ -106,5 +107,7 @@ public class UserController {
         }
         return "User succesfully updated!";
     }
+
+
 
 }

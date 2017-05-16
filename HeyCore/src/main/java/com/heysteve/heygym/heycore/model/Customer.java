@@ -9,18 +9,15 @@ public class Customer extends User{
 
     private String name;
 
-    @Column(name="lastname")
     private String lastName;
 
     private Integer doc;
     @OneToMany
-    @JoinColumn(name="idbills")
-    @Column(name="bills")
+    @JoinColumn(name="idBills")
     private List <Bill> billsList;
 
     @OneToMany
-    @JoinColumn(name="idworkouts")
-    @Column(name="workouts")
+    @JoinColumn(name="idWorkouts")
     private List <Workout> workoutsList;
 
     public String getLastName() {
@@ -45,5 +42,21 @@ public class Customer extends User{
 
     public void setDoc(Integer doc) {
         this.doc = doc;
+    }
+
+    public List<Workout> getWorkoutsList() {
+        return workoutsList;
+    }
+
+    public void setWorkoutsList(List<Workout> workoutsList) {
+        this.workoutsList = workoutsList;
+    }
+
+    public List<Bill> getBillsList() {
+        return billsList;
+    }
+
+    public void setBillsList(List<Bill> billsList) {
+        this.billsList = billsList;
     }
 }

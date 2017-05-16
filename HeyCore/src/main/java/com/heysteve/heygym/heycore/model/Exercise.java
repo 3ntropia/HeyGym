@@ -11,7 +11,6 @@ public class Exercise {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name="idexercise")
     private Integer idExercise;
     private String name;
     private String description;
@@ -20,10 +19,7 @@ public class Exercise {
     private Integer rest;
     private Integer weight;
     private Integer time;
-    private Integer set;
-
-    public Exercise() {
-    }
+    private Integer setNumbers;
 
     public Integer getIdExercise() {
         return idExercise;
@@ -89,11 +85,11 @@ public class Exercise {
         this.time = time;
     }
 
-    public Integer getSet() {
-        return set;
+    public Integer getSetNumbers() {
+        return setNumbers;
     }
 
-    public void setSet(Integer set) {
-        this.set = set;
+    public void setSetNumbers(Integer setNumbers) {
+        this.setNumbers = setNumbers;
     }
 }

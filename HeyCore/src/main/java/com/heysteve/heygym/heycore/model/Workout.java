@@ -12,12 +12,13 @@ public class Workout {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name="idworkout")
     private Integer idWorkout;
+
     private String name;
+
     @OneToMany(cascade=CascadeType.ALL)
-    @JoinColumn(name="idexercise")
-    private List<Exercise> exercise;
+    @JoinColumn(name="idExercise")
+    private List<Exercise> exerciseList;
 
     public Integer getIdWorkout() {
         return idWorkout;
@@ -35,11 +36,11 @@ public class Workout {
         this.name = name;
     }
 
-    public List<Exercise> getExercise() {
-        return exercise;
+    public List<Exercise> getExerciseList() {
+        return exerciseList;
     }
 
-    public void setExercise(List<Exercise> exercise) {
-        this.exercise = exercise;
+    public void setExerciseList(List<Exercise> exerciseList) {
+        this.exerciseList = exerciseList;
     }
 }
