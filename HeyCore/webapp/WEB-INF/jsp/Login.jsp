@@ -64,8 +64,8 @@
         
         <div id="login">   
           <h1>Bienvenido de vuelta</h1>
-          
-          <form action="/" method="post">
+
+          <form action="/" method"/"ost">
           
             <div class="field-wrap">
             <label>
@@ -80,11 +80,11 @@
             </label>
             <input type="password"required autocomplete="off"/>
           </div>
-          
+
           <p class="forgot"><a href="#">Olvidaste la contraseña?</a></p>
-          
+
           <button class="button button-block"/>Acceder</button>
-          
+
           </form>
 
         </div>

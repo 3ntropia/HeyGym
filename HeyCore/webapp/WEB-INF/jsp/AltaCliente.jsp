@@ -1,3 +1,4 @@
+<%@taglib uri = "http://www.springframework.org/tags/form" prefix = "form"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,7 +49,7 @@
                     <li class="dropdown"><a data-hover="dropdown" href="Calendar.html" class="dropdown-toggle"><i class="fa fa-calendar"></i></a>
                     </li>
                     
-                    <li class="dropdown"><a data-hover="dropdown" href="Login.html" class="dropdown-toggle"><i class="fa fa-key"></i></a>
+                    <li class="dropdown"><a data-hover="dropdown" href="Login.jsp" class="dropdown-toggle"><i class="fa fa-key"></i></a>
                     </li>
                     
             	</ul>
@@ -120,12 +121,13 @@
                 <!--BEGIN CONTENT-->
                 <div class="page-content">
                     <div id="tab-general">
-                        
+                        <form:form method = "POST" action = "/addUser">
                         <!-- Daro: Aca va lo contenido en la pestaña -->
-						<input id="nombreUsuario" type="text" name="nombreUsuario" placeholder="Nombre"><br><br>
-						<input id="nombreUsuario" type="text" name="nombreUsuario" placeholder="Apellido"><br><br>
+                            <form:label path = "name">Nombre: </form:label><form:input path = "userName" /><br><br>
+                            <form:label path = "email">Nombre: </form:label><form:input path = "email" /><br><br>
+						<%--<input id="nombreUsuario" type="text" name="nombreUsuario" ><br><br>--%>
 						<input type="submit" value="Submit">
-                        
+                        </form:form>
                     </div>
                 </div>  
              </div>

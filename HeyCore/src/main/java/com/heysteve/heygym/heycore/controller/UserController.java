@@ -5,10 +5,9 @@ import com.heysteve.heygym.heycore.model.User;
 import com.heysteve.heygym.heycore.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 /**
  * Created by marti on 13/5/2017.
@@ -108,6 +107,28 @@ public class UserController {
         return "User succesfully updated!";
     }
 
+    @RequestMapping(value="/addCliente2")
+    @ResponseBody
+    public String login(String email, String password) {
+        try {
+            User user = userDao.getByEmail(email);
+            return "redirect:/kad/altacliente.html";
+        }
+        catch (Exception ex) {
+            return "Error updating the user: " + ex.toString();
+        }
+    }
 
+    @RequestMapping(value = "/addCliente", method = RequestMethod.GET)
+    public ModelAndView cliente() {
+        return new ModelAndView("redirect:/kad/AltaCliente.jsp", "cliente", new User());
+    }
+
+    @RequestMapping(value = "/addUser", method = RequestMethod.POST)
+    public String addStudent(@ModelAttribute("SpringWeb")User user, ModelMap model) {
+        model.addAttribute("userName", user.getUserName());
+        model.addAttribute("email", user.getEmail());
+        return "result";
+    }
 
 }
