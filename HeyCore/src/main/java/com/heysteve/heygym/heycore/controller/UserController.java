@@ -113,7 +113,7 @@ public class UserController {
     public String login(String email, String password) {
         try {
             User user = userDao.getByEmail(email);
-            return "redirect:/kad/altacliente.html";
+            return "redirect:altacliente.html";
         }
         catch (Exception ex) {
             return "Error updating the user: " + ex.toString();
@@ -126,7 +126,7 @@ public class UserController {
     }
 
     @RequestMapping(value = "/addCliente3")
-    public String cliente2(Map<String, Object> model) {
+    public String cliente2(@ModelAttribute("SpringWeb")Map<String, Object> model) {
             model.put("User", new User());
             return "AltaCliente";
     }
