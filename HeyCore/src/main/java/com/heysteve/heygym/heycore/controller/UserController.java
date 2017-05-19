@@ -3,6 +3,7 @@ package com.heysteve.heygym.heycore.controller;
 import com.heysteve.heygym.heycore.dao.UserDao;
 import com.heysteve.heygym.heycore.model.User;
 import com.heysteve.heygym.heycore.repository.UserRepository;
+import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -121,7 +122,13 @@ public class UserController {
 
     @RequestMapping(value = "/addCliente", method = RequestMethod.GET)
     public ModelAndView cliente() {
-        return new ModelAndView("redirect:/kad/AltaCliente.jsp", "cliente", new User());
+        return new ModelAndView("AltaCliente", "AltaCliente", new User());
+    }
+
+    @RequestMapping(value = "/addCliente3")
+    public String cliente2(Map<String, Object> model) {
+            model.put("User", new User());
+            return "AltaCliente";
     }
 
     @RequestMapping(value = "/addUser", method = RequestMethod.POST)

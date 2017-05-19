@@ -2,9 +2,10 @@ package com.heysteve.heygym.heycore;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.support.SpringBootServletInitializer;
 
 @SpringBootApplication
-//prueba user/email
 public class HeyGymMain {
 
 
@@ -27,3 +28,18 @@ public class HeyGymMain {
         };
     }*/
 }
+
+/*
+@SpringBootApplication
+public class HeyGymMain extends SpringBootServletInitializer {
+
+    @Override
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+        return application.sources(HeyGymMain.class);
+    }
+
+    public static void main(String[] args) throws Exception {
+        SpringApplication.run(HeyGymMain.class, args);
+    }
+
+}*/

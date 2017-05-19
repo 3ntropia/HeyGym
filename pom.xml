@@ -18,4 +18,6 @@
         <module>HeyCore</module>
     </modules>
 
+    <packaging>pom</packaging>
+
 </project>
