@@ -6,6 +6,7 @@ import com.heysteve.heygym.heycore.repository.UserRepository;
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
@@ -138,4 +139,20 @@ public class UserController {
         return "result";
     }
 
+    @RequestMapping("/greeting")
+    public String greeting(@RequestParam(value="name", required=false, defaultValue="World") String name, Model model) {
+        model.addAttribute("name", name);
+        return "greeting";
+    }
+
+    @GetMapping("/greeting2")
+    public String greeting(Model model) {
+        model.addAttribute("user", new User());
+        return "altacliente";
+    }
+
+    @PostMapping("/greeting2")
+    public String greetingSubmit(@ModelAttribute User user) {
+        return "result";
+    }
 }
