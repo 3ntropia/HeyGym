@@ -153,6 +153,8 @@ public class UserController {
 
     @PostMapping("/greeting2")
     public String greetingSubmit(@ModelAttribute User user) {
+        userDao.create(user);
         return "result";
     }
+
 }
