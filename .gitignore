@@ -24,4 +24,5 @@ hs_err_pid
 #Added by ArgiesDario
 *.project
 *.classpath
-pom.properties
+*pom.properties
+*.jar.original
