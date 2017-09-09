@@ -1,2 +1,2 @@
 # HeyGym
-Import + maven.
+Pronto va a ser solo Back-end.
