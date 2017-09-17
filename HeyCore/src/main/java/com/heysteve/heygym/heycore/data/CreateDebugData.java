@@ -8,11 +8,12 @@ import com.heysteve.heygym.heycore.dao.UserDao;
 public class CreateDebugData {
 		
 	public static void initialize () {
+		//Testing IntelliJ
+
 		User myuser = new User();
-		System.out.println("eaaaa");
+		System.out.println("EAAAA");
 		myuser.setUserName("Dario");
 		myuser.setEmail("d@d.com");
-		userDao.create(myuser);
     }
 	
 }
