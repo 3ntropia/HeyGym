@@ -4,6 +4,7 @@ com\heysteve\heygym\heycore\dao\UserDao.class
 com\heysteve\heygym\heycore\model\Bill.class
 com\heysteve\heygym\heycore\repository\UserRepository.class
 com\heysteve\heygym\heycore\model\Gym.class
+com\heysteve\heygym\heycore\data\CreateDebugData.class
 com\heysteve\heygym\heycore\controller\MainController.class
 com\heysteve\heygym\heycore\model\Customer.class
 com\heysteve\heygym\heycore\HeyGymMain.class

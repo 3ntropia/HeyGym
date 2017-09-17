@@ -5,14 +5,21 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
 
+import com.heysteve.heygym.heycore.data.CreateDebugData;
+
+
 @SpringBootApplication
 public class HeyGymMain {
 
 
     public static void main(String[] args) {
         SpringApplication.run(HeyGymMain.class, args);
+        CreateDebugData.initialize();
     }
-
+    
+    
+    
+    //Daro: Que es esto mar? lo borramos?
     /*@Bean
     public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
         return args -> {
@@ -29,6 +36,7 @@ public class HeyGymMain {
     }*/
 }
 
+//Daro: Que es esto mar? lo borramos?
 /*
 @SpringBootApplication
 public class HeyGymMain extends SpringBootServletInitializer {
